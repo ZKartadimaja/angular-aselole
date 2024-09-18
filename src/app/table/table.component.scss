@@ -1,0 +1,17 @@
+Tomoro-table {
+    width: 80%; /* Set the table width */
+    margin: 0 auto; /* Center the table horizontally */
+    justify-content: center;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+
+.checkmark{
+    padding-left: 30px;
+}

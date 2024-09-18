@@ -1,0 +1,87 @@
+// Define color variables
+$primary-color: #4285f4;    // Google Blue
+$secondary-color: #34a853;  // Google Green
+$error-color: #ea4335;      // Google Red
+$background-color: #f1f3f4; // Google Light Gray
+$border-color: #dadce0;     // Google Border Gray
+$label-color: #5f6368;      // Google Label Dark Gray
+$input-focus-border-color: $primary-color; // Blue for input focus
+
+// Base styles
+$form-padding: 20px;
+$input-height: 48px;
+$border-radius: 4px;
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $form-padding;
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: $background-color;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 1400;
+    margin-bottom: 8px;
+    color: $label-color;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    align-self: center;
+    height: $input-height;
+    padding: 0 15px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: 16px;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &:focus {
+      border-color: $input-focus-border-color;
+      box-shadow: 0 0 4px rgba($input-focus-border-color, 0.2);
+      outline: none;
+    }
+  }
+
+  .validation-error {
+    color: $error-color;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 100%;
+    height: $input-height;
+    background: $primary-color;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      background: $border-color;
+      cursor: not-allowed;
+    }
+  }
+}

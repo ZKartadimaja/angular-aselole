@@ -1,0 +1,78 @@
+<form [formGroup]="addUserForm" (ngSubmit)="onClick()">
+    <div class="container">
+        <div>
+            <label for="name">Full Name </label>
+            <input id="name" formControlName="name" placeholder="ex: Zulfikar Kartadimaja"/>
+            <div class="validation-error" *ngIf="nameForm?.errors?.['required'] && nameForm?.touched">
+                Please input your name
+            </div>
+            <div class="validation-error" *ngIf="nameForm?.errors?.['minlength'] && nameForm?.touched">
+                Name Characters At Least 3 Characters
+            </div>
+        </div>
+        
+        <div>
+          <div>
+            <p></p>
+            <label for="email">Email </label>
+          </div>
+          <input id="email" formControlName="email" placeholder="ex: ASDP@fif.co.id"/>
+          <div class="validation-error" *ngIf="emailForm?.errors?.['required'] && emailForm?.touched">
+            Please input your email
+          </div>
+          <div class="validation-error" *ngIf="emailForm?.errors?.['email'] && emailForm?.touched">
+            Please input with valid format 
+          </div>
+        </div>
+        
+        <div>
+          <div>
+            <p></p>
+            <label for="city">City </label>
+          </div>
+          <input id="city" formControlName="city" placeholder="ex: Bandung, Jakarta, etc"/>
+          <div class="validation-error" *ngIf="cityForm?.errors?.['required'] && cityForm?.touched">
+            Please input your Current City
+          </div>
+        </div>
+      
+        <div>
+          <div>
+            <p></p>
+            <label for="province">Province </label>
+          </div>
+          <input id="province" formControlName="province" placeholder="ex: DKI Jakarta, Banten, etc."/>
+          <div class="validation-error" *ngIf="provinceForm?.errors?.['required'] && provinceForm?.touched">
+            Please input your Current Province
+          </div>
+        </div>
+        
+        <div>
+          <div>
+            <p></p>
+            <label for="zipcode">Zip-Code</label>
+          </div>
+          <input id="zipcode" formControlName="zipcode" placeholder="ex: 140141"/>
+          <div class="validation-error" *ngIf="zipcodeForm?.errors?.['required'] && zipcodeForm?.touched">
+            Please input your Current Zip Code
+          </div>
+        </div>
+        <p></p>
+
+        <div>
+          <div>
+            <p></p>
+            <label for="paymentDeadline">Payment Deadline </label>
+            <div>
+              <input type="date" id="paymentDeadline" formControlName="paymentDeadline" name="paymentDeadline">
+            </div>
+            <div class="validation-error" *ngIf="paymentDeadlineForm?.errors?.['required'] && paymentDeadlineForm?.touched">
+              Please input your Current Zip Code
+            </div>
+          </div>
+        </div>
+        
+        <button type="Submit" >submit</button>
+    </div>
+    
+</form>
