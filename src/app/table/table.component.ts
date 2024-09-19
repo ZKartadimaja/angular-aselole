@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataUser } from '../app.entity';
 import { UsersdataService } from '../../service/usersdata/usersdata.service';
-import { SnackBarService } from '../../service/usersdata/snackbar/snackbar.service';
+import { SnackBarService } from '../../service/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-table',
