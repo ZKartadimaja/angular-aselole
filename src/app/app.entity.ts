@@ -1,14 +1,18 @@
-export interface DataUser {
-    name: string;
-    email: string;
-    address: Address;
-    paymentDeadline: Date;
-    // action: boolean;
-    completed: boolean;
+export interface DataUserResp {
+    status: number;
+    data:   DataUser[];
 }
 
-interface Address {
-    city: string;
-    province: string;
-    zipcode: number;
+export interface DataUser {
+    paymentDeadline: Date;
+    username:        string;
+    name:            string;
+    age:             number;
+    email:           string;
+    basicSalary:     string;
+    city:            string;
+    province:        string;
+    zipcode:         string;
+    isChecked:       boolean;
+    id?:             string;
 }

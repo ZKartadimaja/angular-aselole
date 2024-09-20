@@ -1,0 +1,84 @@
+
+<h1>Tabel Data User</h1>
+<div class="buttonAdd">
+    <button (click)="goToAdd()">Add New Data</button>
+</div>
+
+<table class="Tomoro-table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Basic Salary
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Payment Deadline
+            </th>
+            <th> 
+                Delete
+            </th>
+            <th>
+                Completed
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of dataUser; index as i" 
+        [ngStyle]="{
+            'text-decoration' : user.isChecked ? 'line-through' : ''
+            }"
+        
+            >
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.id}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.username}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.name}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.age}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.email}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.basicSalary}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.city}}, {{user.province}}, {{user.zipcode}}
+            </td>
+            <td (click)="router.navigate(['/edit/' + user.id])">
+                {{user.paymentDeadline | date}}
+            </td>
+            <td>
+                <img src="https://img.icons8.com/?size=48&id=7837&format=png" alt="deleteicon" (click)="deleteUser(user.id)" >
+            </td>
+            <td >
+                <label class="checkmark">
+                    <input type="checkbox" [(ngModel)]="user.isChecked" (change)="onChecked(user.id, $event)" >
+                    <span class="checkmark"></span>
+                  </label>
+            </td>
+        </tr>
+    </tbody>
+</table>

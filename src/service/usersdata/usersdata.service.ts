@@ -11,21 +11,21 @@ export class UsersdataService {
 
   constructor() { }
 
-  getUsers(){
-    return this.userData
-  }
+  // getUsers(){
+  //   return this.userData
+  // }
 
-  addUsers(event: any){
-    this.userData.push(event)
-  }
+  // addUsers(event: any){
+  //   this.userData.push(event)
+  // }
 
   deleteUsers(event: any){
     this.userData.splice(event,1)
   }
 
-  onChecked(index:number){
-    this.userData[index].completed = !this.userData[index].completed;
+  onChecked(index:number, isChecked: boolean){
+    let selected = this.userData[index];
+    selected.isChecked = isChecked;
+    this.userData[index] = selected;
   }
-
-
 }

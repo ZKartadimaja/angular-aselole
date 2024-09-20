@@ -1,5 +1,7 @@
-<div>
-  <app-form (submitButton)="checkOutput($event)"></app-form>
+<!-- <div>
+  <app-form (submitButton)="createUser($event)"></app-form>
   <p></p>
-  <app-table [users] = "dataUser"></app-table>
-</div>
+  <app-table [users] = "dataUser" (idUser)="deleteUser($event)"></app-table>
+</div> -->
+
+<router-outlet></router-outlet>
