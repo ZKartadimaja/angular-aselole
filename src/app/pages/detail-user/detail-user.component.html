@@ -1,3 +1,4 @@
+
 <form [formGroup]="addUserForm" (ngSubmit)="onClick()">
     <div class="container">
       <div>
@@ -105,6 +106,7 @@
         </div>
         
         <button type="Submit" [disabled]="addUserForm.invalid">submit</button>
+        <app-button></app-button>
     </div>
     
 </form>

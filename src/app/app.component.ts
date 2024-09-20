@@ -28,34 +28,5 @@ export class AppComponent {
     private userDataService : UsersdataService,
     private httpRequestService : HttpRequestService
   ){};
-
-
-  // ngOnInit(): void {
-  //   this.title = 'Tabel Data User';
-  //   // this.dataUser = this.userDataService.getUsers();
-  //   this.fetchDataUser()
-  // }
-
-  // fetchDataUser(){
-  //   this.isLoading = true;
-  //   this.httpRequestService.getData().subscribe((res: any) => {
-  //     this.isLoading = false;
-  //     this.dataUser = res;
-  //     console.log(res)
-  //   }, (err) => {console.log(err)})
-  // }
-
-  // createUser(event: any){
-  //   // const payload = this.dataUser;
-  //   this.httpRequestService.createUser(event).subscribe((res: any) => {
-  //     console.log("Data Succesfully Save", res),
-  //     this.fetchDataUser()
-  //   });
-  // }
-
-  
-  // checkOutput(event:any){
-  //   this.userDataService.addUsers(event)
-  // }
 }
 

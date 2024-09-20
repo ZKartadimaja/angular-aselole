@@ -1,0 +1,15 @@
+$primary-color: #073465;
+button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}

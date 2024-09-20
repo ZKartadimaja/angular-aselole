@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpRequestService } from '../../../service/http-service/http-request.service';
 import { SnackBarService } from '../../../service/snackbar/snackbar.service';
+import { ButtonComponent } from '../../button/button.component';
 
 @Component({
   selector: 'app-detail-user',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, ButtonComponent],
   templateUrl: './detail-user.component.html',
   styleUrl: './detail-user.component.scss'
 })
@@ -17,14 +18,9 @@ export class DetailUserComponent{
   title         = 'tugas-day3';
   addUserForm!: FormGroup
   dataUser!:    DataUser
-  // idUrl:        string | null = null;
-  // methodeUrl:   string | null = null;
   isLoading:    boolean = false;
   apiUrl: string =       'https://6580f9853dfdd1b11c424344.mockapi.io/rakamin/employee';
   pathId!:      string | null;
-  
-  // @Output() submitButton = new EventEmitter<DataUser>();
-
   
   constructor(
     private activatedRoute : ActivatedRoute,
@@ -32,13 +28,6 @@ export class DetailUserComponent{
     private router: Router,
     private snackbar: SnackBarService
   ){
-    // this.idUrl = this.activatedRoute.snapshot.paramMap.get('id');
-    // this.methodeUrl = this.activatedRoute.snapshot.paramMap.get('methode')
-    // this.activatedRoute.queryParams.subscribe(params => console.log(params));
-    // console.log(this.activatedRoute.snapshot.paramMap);
-    // console.log(this.idUrl)
-    // console.log(this.methodeUrl)
-    
     // Form Control 
     this.addUserForm = new FormGroup({
       username : new FormControl('', [Validators.required]),
@@ -130,66 +119,3 @@ export class DetailUserComponent{
     }
   }
 };
-
-  
-
-  
-
-  // ngOnInit(): void {
-  //   this.title = 'Tabel Data User';
-  //   // this.dataUser = this.userDataService.getUsers();
-  //   // 
-  // }
-  // fetchDataUser(){
-  //   this.isLoading = true;
-  //   this.httpRequestService.getData().subscribe((res: any) => {
-  //     this.isLoading = false;
-  //     this.dataUser = res;
-  //     console.log(res)}, (err) => {console.log(err)})
-  //   }
-  
-  // createUser(event: any){
-  //   this.httpRequestService.createUser(event).subscribe((res: any) => {
-  //     console.log("Data Succesfully Save", res),
-  //     // this.fetchDataUser(),
-  //     this.router.navigate([''])
-  //   });
-  // }
-  // deleteUser(event: any){
-  //   this.httpRequestService.deleteUser(event).subscribe((res: any) => {
-  //     console.log("Data Succesfully Save", res),
-  //     this.fetchDataUser()
-  //   });
-  // }
-
-  // constructor(
-    
-  // ){
-    
-      // action: new FormControl('', [Validators.required]),
-  //   });
-  // }
-
-  
- 
-
-  // fetchDataUser(event:any){
-  //   this.isLoading = true;
-  //   this.httpRequestService.getById().subscribe((res: any) => {
-  //     this.isLoading = false;
-  //     this.nameForm?.setValue(res?.name);
-  //     this.usernameForm?.setValue(res?.username);
-  //     this.emailForm?.setValu(res.email);
-  //     this.basicSalaryForm?.setValue(res.basicSalary);
-  //     this.provinceForm?.setValue(res.province);
-  //     this.cityForm?.setValue(res.city);
-  //     this.zipcodeForm?.setValue(res.zipcode);
-  //     this.paymentDeadlineForm?.setValue(res.paymentDeadline);
-  //     console.log(res)
-  //   }, (err) => {console.log(err)})
-  // }
-
-  // goToLanding () {
-  //   this.router.navigate([''])
-  // }
-// }

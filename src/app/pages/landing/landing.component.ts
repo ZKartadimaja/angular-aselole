@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { HttpRequestService } from '../../../service/http-service/http-request.service';
 import { Router } from '@angular/router';
+import { ButtonComponent } from '../../button/button.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ButtonComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
@@ -29,13 +30,6 @@ export class LandingComponent {
   ){
     this.fetchDataUser()
   };
-
-
-  // ngOnInit(): void {
-  //   this.title = 'Tabel Data User';
-  //   // this.dataUser = this.userDataService.getUsers();
-  //   this.fetchDataUser()
-  // }
 
   fetchDataUser(){
     this.isLoading = true;
@@ -68,7 +62,7 @@ export class LandingComponent {
     };
     this.httpRequestService.updateUser(payload, id).subscribe((res: any) => {
       this.snackbarService.openSnackBar('Data Succesfully update', '')
-      // this.fetchDataUser()
+      this.fetchDataUser()
     },
       (err) => {this.snackbarService.openSnackBar('Error Update Data  ', '')
     });
