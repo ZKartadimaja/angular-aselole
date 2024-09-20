@@ -1,7 +1,7 @@
 <form [formGroup]="addUserForm" (ngSubmit)="onLogin()">
     <div class="container">
       <div>
-        <label for="username">Username </label>
+        <label for="username">USERNAME </label>
         <input id="username" formControlName="username" placeholder="ex: kartadimaja123"/>
         <div class="validation-error" *ngIf="addUserForm.get('username')?.errors?.['required'] && addUserForm.get('username')?.touched">
           Please input your username
@@ -10,7 +10,7 @@
 
       <div>
         <p></p>
-        <label for="password">Password </label>
+        <label for="password">PASSWORD </label>
         <input type="password" id="password" formControlName="password" placeholder="ex: Zulfikar Kartadimaja"/>
         <div class="validation-error" *ngIf="addUserForm.get('password')?.errors?.['required'] && addUserForm.get('password')?.touched">
           Please input valid password
